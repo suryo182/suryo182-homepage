@@ -1,13 +1,17 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
-    title: `My Personal Website`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `suryo182 Homepage`,
+    siteUrl: `https://suryo182-homepage.vercel.app`,
   },
   plugins: [
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: 'vqofpmi3',
+        projectId: process.env.SANITY_PROJECT_ID,
         dataset: 'production',
       },
     },
@@ -15,7 +19,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'waef',
+        trackingId: process.env.GOOGLE_TRACKING_ID,
       },
     },
     'gatsby-plugin-image',
