@@ -1,0 +1,25 @@
+@import 'remixicon/fonts/remixicon.css';
+
+@tailwind base;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply delay-200 ease-linear transition-all text-black;
+  }
+
+  body.dark {
+    @apply antialiased bg-slate-800 text-white;
+  }
+}
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .checkbox:checked + .label .ball {
+    transform: translateX(18px);
+  }
+}
